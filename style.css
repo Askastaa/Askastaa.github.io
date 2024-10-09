@@ -1,0 +1,134 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    margin: 0;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Prevents scrolling */
+  }
+  
+  .box {
+    width: 80%; /* Adjusted width for better fit */
+    height: 90vh; /* Reduced height to fit within one page */
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* Allows internal scrolling if needed */
+  }
+  
+  #inbox {
+    border: solid darkgray 6px;
+    height: auto; /* Let the height adjust based on content */
+    width: 48%; /* Adjusted to fit two columns side by side */
+    margin: 10px;
+    padding: 0;
+  }
+  
+  .header {
+    text-align: center;
+    color: #006fae;
+    -webkit-text-stroke: 2px gray;
+    font-weight: bolder;
+    font-size: 40px; /* Reduced font size */
+    opacity: 100%;
+    margin-bottom: 10px;
+  }
+  
+  
+  .firstrowcontainer { 
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: auto;
+    gap: 10px; /* Space between the columns */
+  }
+  
+  .menuItem {
+    font-weight: bolder;
+    font-size: 18px; /* Adjusted font size */
+    color: #006fae;
+  }
+  
+  
+  #headerSwitch {
+    padding-left: 40px;
+    padding-top: 4px; 
+    font-size: 20px; /* Adjusted font size */
+    color: #006fae; 
+    font-weight: bolder;
+  }
+  #headerSwitch2 {
+    padding-left: 40px;
+    padding-top: 4px; 
+    font-size: 20px; /* Adjusted font size */
+    color: #006fae; 
+    font-weight: bolder;
+  }
+  
+  @media (max-height: 1080px) {
+    .box {
+      height: 100vh;
+    }
+    .header {
+      font-size: 35px;
+    }
+    .menuItem {
+      font-size: 16px;
+    }
+    #headerSwitch {
+      font-size: 18px;
+    }
+  }
+  
+  /* checkbox */
+  
+  
+  /* */ 
+  
+  /* custom switch ld */
+  
+  
+  .custom-switch.custom-switch-lg .custom-control-label {
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+  }
+  
+  .custom-switch.custom-switch-lg .custom-control-label::before {
+    height: 2rem;
+    width: calc(3rem + 0.75rem);
+    border-radius: 4rem;
+  }
+  
+  .custom-switch.custom-switch-lg .custom-control-label::after {
+    width: calc(2rem - 4px);
+    height: calc(2rem - 4px);
+    border-radius: calc(3rem - (2rem / 2));
+  }
+  
+  .custom-switch.custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
+    transform: translateX(calc(2rem - 0.25rem));
+  }
+  
+  /* custom switch md */
+  .custom-switch.custom-switch-md .custom-control-label {
+    padding-left: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .custom-switch.custom-switch-md .custom-control-label::before {
+    height: 1.5rem;
+    width: calc(2rem + 0.75rem);
+    border-radius: 3rem;
+  }
+  
+  .custom-switch.custom-switch-md .custom-control-label::after {
+    width: calc(1.5rem - 4px);
+    height: calc(1.5rem - 4px);
+    border-radius: calc(2rem - (1.5rem / 2));
+  }
+  
+  .custom-switch.custom-switch-md .custom-control-input:checked ~ .custom-control-label::after {
+    transform: translateX(calc(1.5rem - 0.25rem));
+  }
+  /* */ 
