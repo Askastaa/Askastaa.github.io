@@ -180,6 +180,29 @@
                                 </td>
                             </tr>
 
+							<!-- Eistee -->
+                            <tr>
+                                <td style="padding: 0; padding-top: 6px; padding-left: 20px">
+                                    <img src="images/extra.png" style="width: 45px" />
+                                </td>
+                                <td><p1 class="menuItem"> Eistee </p1></td>
+                                <td style="padding: 0">
+                                    <form>
+                                        <div
+                                            class="form-group"
+                                            style="padding-top: 7px; margin: 0; width: 80px"
+                                        >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="iEistee"
+                                                placeholder="Anzahl"
+                                            />
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+
 							<!-- Kaffee -->
                             <tr>
                                 <td style="padding: 0; padding-top: 6px; padding-left: 20px">
@@ -619,6 +642,7 @@
 					cola: document.getElementById('iCola'),
 					fanta: document.getElementById('iFanta'),
 					sprite: document.getElementById('iSprite'),
+					eistee: document.getElementById('iEistee'),
 					wasser: document.getElementById('iWasser'),
 					bier: document.getElementById('iBier'),
 					kaffee: document.getElementById('iKaffee'),
@@ -681,6 +705,8 @@
 						prices.getrank * (parseInt(inputs.fanta.value) || 0);
 					const SpritePrice =
 						prices.getrank * (parseInt(inputs.sprite.value) || 0);
+					const EisteePrice =
+						prices.getrank * (parseInt(inputs.eistee.value) || 0);
 					const WasserPrice =
 						prices.getrank * (parseInt(inputs.wasser.value) || 0);
 					const BierPrice =
@@ -688,7 +714,7 @@
 					const KaffeePrice =
 						prices.getrank * (parseInt(inputs.kaffee.value) || 0);
 
-					total += IskembecorbaPrice + AdanaPrice + BaklavaPrice + KuenefePrice + DoenerPrice + LahmacunPrice + DueruemPrice + DoenerboxPrice + PommesPrice + PidePrice + PizzaPrice + AyrunPrice + UlumagPrice + ColaPrice + FantaPrice + SpritePrice + WasserPrice + BierPrice + KaffeePrice;
+					total += IskembecorbaPrice + AdanaPrice + BaklavaPrice + KuenefePrice + DoenerPrice + LahmacunPrice + DueruemPrice + DoenerboxPrice + PommesPrice + PidePrice + PizzaPrice + AyrunPrice + UlumagPrice + ColaPrice + FantaPrice + SpritePrice + EisteePrice + WasserPrice + BierPrice + KaffeePrice;
 
 					// Apply discount
 					const rabattInput = inputs.rabatt.value.trim();
@@ -714,6 +740,7 @@
 				inputs.cola.addEventListener('input', calculatePrice);
 				inputs.fanta.addEventListener('input', calculatePrice);
 				inputs.sprite.addEventListener('input', calculatePrice);
+				inputs.eistee.addEventListener('input', calculatePrice);
 				inputs.wasser.addEventListener('input', calculatePrice);
 				inputs.bier.addEventListener('input', calculatePrice);
 				inputs.kaffee.addEventListener('input', calculatePrice);
