@@ -629,9 +629,14 @@
 			document.addEventListener('DOMContentLoaded', function () {
 				// Prices (dummy values, adjust as needed)
 				const prices = {
-                    essennormal: 5000,
-                    essenteuerer: 10000,
-                    getrank: 1000,
+                    foodneun: 18,
+                    foodacht: 16,
+		    foodnsieben: 14,
+		    foodnsechs: 12,
+		    foodnfuenf: 10,
+		    foodvier: 8,
+		    fooddrei: 6,
+		    foodzwei: 4,
 				};
 
 				// Get references to all elements
@@ -670,49 +675,49 @@
 					// Calculate "Extras" with multipliers
 					// Expensive Food
 					const IskembecorbaPrice =
-						prices.essenteuerer * (parseInt(inputs.suppe.value) || 0);
+						prices.foodsechs * (parseInt(inputs.suppe.value) || 0);
 					const AdanaPrice =
-						prices.essenteuerer * (parseInt(inputs.adana.value) || 0);
+						prices.foodneun * (parseInt(inputs.adana.value) || 0);
 					const BaklavaPrice =
-						prices.essenteuerer * (parseInt(inputs.baklava.value) || 0);
+						prices.foodsieben * (parseInt(inputs.baklava.value) || 0);
 					const KuenefePrice =
-						prices.essenteuerer * (parseInt(inputs.kuenefe.value) || 0);
+						prices.foodsechs * (parseInt(inputs.kuenefe.value) || 0);
 					// Calculate "Extras" with multipliers
 					// Food
 					const DoenerPrice =
-						prices.essennormal * (parseInt(inputs.doener.value) || 0);
+						prices.foodacht * (parseInt(inputs.doener.value) || 0);
                     const LahmacunPrice =
-						prices.essennormal * (parseInt(inputs.lahmacun.value) || 0);
+						prices.foodfuenf * (parseInt(inputs.lahmacun.value) || 0);
 					const DueruemPrice =
-						prices.essennormal * (parseInt(inputs.dueruem.value) || 0);
+						prices.foodacht * (parseInt(inputs.dueruem.value) || 0);
 					const DoenerboxPrice =
-						prices.essennormal * (parseInt(inputs.doenerbox.value) || 0);
+						prices.foodneun * (parseInt(inputs.doenerbox.value) || 0);
 					const PommesPrice =
-						prices.essennormal * (parseInt(inputs.pommes.value) || 0);
+						prices.foodvier * (parseInt(inputs.pommes.value) || 0);
 					const PidePrice =
-						prices.essennormal * (parseInt(inputs.pide.value) || 0);
+						prices.foodsieben * (parseInt(inputs.pide.value) || 0);
 					const PizzaPrice =
-						prices.essennormal * (parseInt(inputs.pizza.value) || 0);
+						prices.foodneun * (parseInt(inputs.pizza.value) || 0);
 					// Calculate "Extras" with multipliers
 					// Getränke
                     const AyrunPrice =
-						prices.getrank * (parseInt(inputs.ayrun.value) || 0);
+						prices.foodzwei * (parseInt(inputs.ayrun.value) || 0);
                     const UlumagPrice =
-						prices.getrank * (parseInt(inputs.ulumag.value) || 0);
+						prices.foodzwei * (parseInt(inputs.ulumag.value) || 0);
 					const ColaPrice =
-						prices.getrank * (parseInt(inputs.cola.value) || 0);
+						prices.foodacht * (parseInt(inputs.cola.value) || 0);
 					const FantaPrice =
-						prices.getrank * (parseInt(inputs.fanta.value) || 0);
+						prices.foodacht * (parseInt(inputs.fanta.value) || 0);
 					const SpritePrice =
-						prices.getrank * (parseInt(inputs.sprite.value) || 0);
+						prices.foodacht * (parseInt(inputs.sprite.value) || 0);
 					const EisteePrice =
-						prices.getrank * (parseInt(inputs.eistee.value) || 0);
+						prices.fooddrei * (parseInt(inputs.eistee.value) || 0);
 					const WasserPrice =
-						prices.getrank * (parseInt(inputs.wasser.value) || 0);
+						prices.foodzwei * (parseInt(inputs.wasser.value) || 0);
 					const BierPrice =
-						prices.getrank * (parseInt(inputs.bier.value) || 0);
+						prices.foodacht * (parseInt(inputs.bier.value) || 0);
 					const KaffeePrice =
-						prices.getrank * (parseInt(inputs.kaffee.value) || 0);
+						prices.foodzwei * (parseInt(inputs.kaffee.value) || 0);
 
 					total += IskembecorbaPrice + AdanaPrice + BaklavaPrice + KuenefePrice + DoenerPrice + LahmacunPrice + DueruemPrice + DoenerboxPrice + PommesPrice + PidePrice + PizzaPrice + AyrunPrice + UlumagPrice + ColaPrice + FantaPrice + SpritePrice + EisteePrice + WasserPrice + BierPrice + KaffeePrice;
 
