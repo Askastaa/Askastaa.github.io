@@ -26,38 +26,6 @@
 			<h2 class="header">Dönerladen Rechner</h2>
 
 			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="custom-control custom-switch custom-switch-lg">
-							<label>
-								50% Jake Teller |
-							</label>
-                            <label>
-								50% Kinga Slay |
-							</label>
-                            <label>
-								50% Gina Lisa Slay Pisdez |
-							</label>
-						</div>
-					</div>
-
-					<div class="col">
-						<div class="custom-control custom-switch custom-switch-lg">
-							<label>
-								50% Jake Teller |
-							</label>
-                            <label>
-								50% Kinga Slay |
-							</label>
-                            <label>
-								50% Gina Lisa Slay Pisdez |
-							</label>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="container">
 				<!-- TOP -->
 				<div class="row">
 					<!-- TOP LEFT -->
@@ -104,6 +72,29 @@
                                                 type="text"
                                                 class="form-control"
                                                 id="iUlumag"
+                                                placeholder="Anzahl"
+                                            />
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+
+							<!-- Cay -->
+                            <tr>
+                                <td style="padding: 0; padding-top: 6px; padding-left: 20px">
+                                    <img src="images/extra.png" style="width: 45px" />
+                                </td>
+                                <td><p1 class="menuItem"> Cay </p1></td>
+                                <td style="padding: 0">
+                                    <form>
+                                        <div
+                                            class="form-group"
+                                            style="padding-top: 7px; margin: 0; width: 80px"
+                                        >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="iCay"
                                                 placeholder="Anzahl"
                                             />
                                         </div>
@@ -544,6 +535,29 @@
 										</form>
 									</td>
 								</tr>
+						
+								<!-- Börek -->
+								<tr>
+									<td style="padding: 0; padding-top: 6px; padding-left: 20px">
+										<img src="images/extra.png" style="width: 45px" />
+									</td>
+									<td><p1 class="menuItem"> Börek </p1></td>
+									<td style="padding: 0">
+										<form>
+											<div
+												class="form-group"
+												style="padding-top: 7px; margin: 0; width: 80px"
+											>
+												<input
+													type="text"
+													class="form-control"
+													id="iBoerek"
+													placeholder="Anzahl"
+												/>
+											</div>
+										</form>
+									</td>
+								</tr>
 
 							</tbody>
 						</table>
@@ -629,14 +643,15 @@
 			document.addEventListener('DOMContentLoaded', function () {
 				// Prices (dummy values, adjust as needed)
 				const prices = {
-                    foodneun: 18,
-                    foodacht: 16,
-		    foodsieben: 14,
-		    foodsechs: 12,
-		    foodfuenf: 10,
-		    foodvier: 8,
-		    fooddrei: 6,
-		    foodzwei: 4,
+			foodsuppe: 25,		
+            foodneun: 20,
+            foodacht: 18,
+		    foodsieben: 16,
+		    foodsechs: 14,
+		    foodfuenf: 12,
+		    foodvier: 11,
+		    fooddrei: 9,
+		    foodzwei: 7,
 				};
 
 				// Get references to all elements
@@ -644,6 +659,7 @@
 				const inputs = {
 					ayrun: document.getElementById('iAyrun'),
                     ulumag: document.getElementById('iUlumag'),
+					cay: document.getElementById('iCay'),
 					cola: document.getElementById('iCola'),
 					fanta: document.getElementById('iFanta'),
 					sprite: document.getElementById('iSprite'),
@@ -660,6 +676,7 @@
 					dueruem: document.getElementById('iDueruem'),
 					doenerbox: document.getElementById('iDoenerbox'),
 					pommes: document.getElementById('iPommes'),
+					boerek: document.getElementById('iBoerek'),
 					pide: document.getElementById('iPide'),
 					pizza: document.getElementById('iPizza'),
 
@@ -675,14 +692,13 @@
 					// Calculate "Extras" with multipliers
 					// Expensive Food
 					const IskembecorbaPrice =
-						prices.foodsechs * (parseInt(inputs.suppe.value) || 0);
+						prices.foodsuppe * (parseInt(inputs.suppe.value) || 0);
 					const AdanaPrice =
 						prices.foodneun * (parseInt(inputs.adana.value) || 0);
 					const BaklavaPrice =
 						prices.foodsieben * (parseInt(inputs.baklava.value) || 0);
 					const KuenefePrice =
 						prices.foodsechs * (parseInt(inputs.kuenefe.value) || 0);
-					// Calculate "Extras" with multipliers
 					// Food
 					const DoenerPrice =
 						prices.foodacht * (parseInt(inputs.doener.value) || 0);
@@ -698,12 +714,15 @@
 						prices.foodsieben * (parseInt(inputs.pide.value) || 0);
 					const PizzaPrice =
 						prices.foodneun * (parseInt(inputs.pizza.value) || 0);
-					// Calculate "Extras" with multipliers
+					const BoerekPrice =
+						prices.foodsieben * (parseInt(inputs.boerek.value) || 0);
 					// Getränke
                     const AyrunPrice =
 						prices.foodzwei * (parseInt(inputs.ayrun.value) || 0);
                     const UlumagPrice =
 						prices.foodzwei * (parseInt(inputs.ulumag.value) || 0);
+					const CayPrice =
+						prices.foodsechs * (parseInt(inputs.cay.value) || 0);
 					const ColaPrice =
 						prices.foodvier * (parseInt(inputs.cola.value) || 0);
 					const FantaPrice =
@@ -719,7 +738,7 @@
 					const KaffeePrice =
 						prices.foodzwei * (parseInt(inputs.kaffee.value) || 0);
 
-					total += IskembecorbaPrice + AdanaPrice + BaklavaPrice + KuenefePrice + DoenerPrice + LahmacunPrice + DueruemPrice + DoenerboxPrice + PommesPrice + PidePrice + PizzaPrice + AyrunPrice + UlumagPrice + ColaPrice + FantaPrice + SpritePrice + EisteePrice + WasserPrice + BierPrice + KaffeePrice;
+					total += IskembecorbaPrice + AdanaPrice + BaklavaPrice + KuenefePrice + BoerekPrice + DoenerPrice + LahmacunPrice + DueruemPrice + DoenerboxPrice + PommesPrice + PidePrice + PizzaPrice + AyrunPrice + CayPrice + UlumagPrice + ColaPrice + FantaPrice + SpritePrice + EisteePrice + WasserPrice + BierPrice + KaffeePrice;
 
 					// Apply discount
 					const rabattInput = inputs.rabatt.value.trim();
@@ -746,6 +765,7 @@
 				inputs.fanta.addEventListener('input', calculatePrice);
 				inputs.sprite.addEventListener('input', calculatePrice);
 				inputs.eistee.addEventListener('input', calculatePrice);
+				inputs.cay.addEventListener('input', calculatePrice);
 				inputs.wasser.addEventListener('input', calculatePrice);
 				inputs.bier.addEventListener('input', calculatePrice);
 				inputs.kaffee.addEventListener('input', calculatePrice);
@@ -760,6 +780,7 @@
 				inputs.pommes.addEventListener('input', calculatePrice);
 				inputs.pide.addEventListener('input', calculatePrice);
 				inputs.pizza.addEventListener('input', calculatePrice);
+				inputs.boerek.addEventListener('input', calculatePrice);
 
 				// Initialize price display
 				calculatePrice();
